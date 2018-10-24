@@ -3,6 +3,9 @@ let gridWidth;
 let squareSize;
 let amountOfSquares;
 
+let startExists = true;
+let endExists = true;
+
 let playField = [];
 
 function setup() {
@@ -26,8 +29,6 @@ function setup() {
 }
 
 function draw() {
-
-
     for (let x = 0; x < gridWidth; x++) {
         for (let y = 0; y < gridHeight; y++) {
             playField[x][y].show();
