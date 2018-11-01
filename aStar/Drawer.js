@@ -51,6 +51,8 @@ function keyPressed() {
                 }
             }
         }
+
+        //draw startnode
     } else if (key === 's' || key === 'S') {
         for (let x = 0; x < gridWidth; x++) {
             for (let y = 0; y < gridHeight; y++) {
@@ -60,10 +62,12 @@ function keyPressed() {
                             deleteStartNode();
                         }
                         playField[x][y].setState('startnode');
+                        startnodeVector = createVector(x, y);
                     }
                 }
             }
         }
+        //draw endnode
     } else if (key === 'e' || key === 'E') {
         for (let x = 0; x < gridWidth; x++) {
             for (let y = 0; y < gridHeight; y++) {
@@ -73,9 +77,21 @@ function keyPressed() {
                             deleteEndNode();
                         }
                         playField[x][y].setState('endnode');
+                        endnodeVector = createVector(x, y);
                     }
                 }
             }
+        }
+    } else if (key === 'y' || key === 'Y') {
+
+        console.log("startnode: " + startnodeVector);
+        console.log("endnode: " + endnodeVector);
+        if (endnodeVector === undefined || startnodeVector === undefined) {
+            console.log("please define an end and start node");
+        }
+        else {
+            pathfinder = new PathFinder(startnodeVector, endnodeVector);
+            pathfinder.findPath();
         }
     }
 }

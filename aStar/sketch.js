@@ -8,6 +8,9 @@ let endExists = true;
 
 let playField = [];
 
+let startnodeVector;
+let endnodeVector;
+
 function setup() {
     createCanvas(1200, 800);
     background(0);
@@ -24,8 +27,8 @@ function setup() {
         }
     }
 
-    playField[4][9].setState('startnode');
-    playField[25][9].setState('endnode');
+    // playField[4][9].setState('startnode');
+    // playField[25][9].setState('endnode');
 }
 
 function draw() {
